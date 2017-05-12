@@ -1,0 +1,115 @@
+Installationsanleitung Community Software WoltLab Suite™ 3
+
+Inhaltsverzeichnis:
+
+	  I. Systemvoraussetzungen
+	 II. Installationsvorbereitungen
+	III. Ablauf der Installation 
+	 IV. Update von Burning Board 4.0 und älter
+	  V. Datenübernahme aus fremden Systemen
+
+----------------------------------------------------------------	 
+
+I. Systemvoraussetzungen
+
+Für die Installation von WoltLab Suite™ 3 müssen folgende Voraussetzungen erfüllt werden:
+
+	* Ein Webserver mit PHP 5.5.4 oder höher
+	* Folgende PHP-Erweiterungen werden benötigt: mbstring, libxml, dom, zlib, pdo, pdo_mysql, json, pcre
+	* Der PHP Safe Mode muss deaktiviert sein
+	* Eine MySQL-Datenbank in Version 5.5.35 oder neuer / alternativ MariaDB 10.0.22 oder neuer, jeweils mit InnoDB Unterstützung
+	* Ca. 20 MB Festplattenspeicher
+	* Ein FTP-Programm, um die Programmdateien auf den Webserver/Webspace zu laden
+
+Hinweis: Es ist nicht möglich, WoltLab Suite™ 3 mit einer PHP-Version unter 5.5.4 zu betreiben!
+
+----------------------------------------------------------------
+
+II. Installationsvorbereitungen
+
+1. Entpacken Sie das Zip-Archiv auf Ihre Festplatte. Sie erhalten folgende Dateien:
+	* upload/test.php
+	* upload/install.php
+	* upload/WCFSetup.tar.gz
+	* License agreement.txt
+	* Lies mich.txt
+	* Lizenzbestimmungen.txt
+	* Read me.txt
+
+Hinweis: Die WCFSetup.tar.gz im Upload Verzeichnis darf auf keinen Fall entpackt werden!
+
+2. Verbinden Sie sich mit Ihrem FTP Programm mit Ihrem Webserver/Webspace und laden Sie alle Dateien aus dem Upload Verzeichnis in das Verzeichnis über das später WoltLab Suite erreichbar sein soll. Die Zugangsdaten für den FTP erfahren Sie im Kundenbereich Ihres Webhosters.
+
+3. Um Sicher zu gehen das der Server/Webspace alle Voraussetzungen erfüllt, rufen Sie als nächstes bitte die test.php in Ihrem Webbrowser auf. Beispielsweise: http://www.example.com/test.php (ersetzen Sie: www.example.com durch ihren eigenen Domainnamen bzw. fügen sie etwaige Unterverzeichnisse hinzu http://www.example.com/forum/test.php). Sollte Ihr Webspace nicht alle Voraussetzungen erfüllen, dann setzen Sie sich bitte mit Ihrem Webhoster in Verbindung, um zu klären, ob Sie auf ein leistungsfähigeres Paket wechseln können. Bei einem dedizierten Server installieren Sie bitte die fehlenden Komponenten selbst nach.
+
+4. Halten Sie bitte für die weitere Installation Ihre MySQL Zugangsdaten bereit. Diese erfahren Sie im Kundenbereich Ihres Webhosters.
+
+----------------------------------------------------------------
+
+
+III. Ablauf der Installation
+
+Bitte beachten Sie, dass das Installationsskript an manchen Stellen schneller vorankommt als an anderen und brechen Sie den Vorgang nicht voreilig ab! Bitte drücken Sie während der Installation auch nicht die Taste F5 oder aktualisieren Sie nicht anderweitig das Browserfenster.
+
+1. Wenn Sie zuvor mit der test.php die Voraussetzungen erfolgreich geprüft haben, dann können Sie nun mit "Sie können mit der Installation beginnen." fortfahren. Alternativ rufen Sie bitte die install.php direkt in Ihrem Webbrowser auf (http://www.example.com/install.php). Folgen Sie nun den Anweisungen des Installationsassistenten. Halten Sie für die Installation bitte Ihre MySQL Zugangsdaten bereit.
+
+2. Folgen Sie bitte den Anweisungen des Installations-Assistenten. Der Installations-Assistent prüft noch einmal zusätzlich den Webspace auf zwingend benötigte Systemvoraussetzungen. Sollte hier etwas nicht grün angezeigt werden, dann setzen Sie sich bitte mit Ihrem Webhoster in Verbindung, ob dies noch geändert werden kann oder Sie einen anderen Webhoster benötigen. Die Installation kann erst fortgesetzt werden, wenn alle Bedingungen erfüllt werden. Als nächstes werden Sie nach dem Installationsverzeichnis für das CMS und Ihr gewähltes Produkt (App) gefragt. Standardmäßig wird Ihnen für das CMS das Hauptverzeichnis vorgeschlagen in dem auch die install.php liegt. Alle weiteren Apps werden in entsprechenden Unterordnern installiert (Für das Forum wird als Ordner forum vorgeschlagen).
+
+
+----------------------------------------------------------------
+
+IV. Update von Burning Board 4.x und älter
+
+Ein direktes Update von Burning Board 4.0 und älter ist nicht möglich. Sie müssen WoltLab Suite in einem separaten Verzeichnis neu installieren und dann anschließend per Burning Board Importer die Daten aus ihrem alten Forum übernehmen.
+
+Hinweis: Wenn Sie WoltLab Suite über die selbe URL aufrufbar machen wollen wie ihr derzeitiges Forum, dann kopieren Sie bitte ihr altes Forum in ein Unterverzeichnis und installieren Sie WoltLab Suite direkt in das korrekte Verzeichnis.
+
+Für den Import von Dateianhängen, Avataren und Smileys ist es zwingend notwendig, das beide Forenysteme sich auf dem selben Webspace Account befinden. Bei unterschiedlichen Subdomains verweigert je nach Serverkonfiguration die Sicherheitseinstellung open_basedir den Zugriff auf die andere Subdomain. Somit ist der Import von Dateianhängen, Avataren und Smileys nicht möglich.
+
+1. Installieren Sie WoltLab Suite und wählen Sie während der Installation als optionales Paket den Importer aus. Sollte WoltLab Suite bereits ohne Importer installiert sein, so können Sie das Paket über die Paketserver jeder Zeit nachinstallieren. Nach erfolgreicher Installation gehen Sie unter Administration -> Verwaltung -> Wartung auf Datenimport und wählen den Importer für ihr altes Forensystem aus.
+
+2. Folgen Sie den Anweisungen des Importers. Denken Sie bitte auch daran, dass der Import je nach Anzahl der Foren, Beiträge und Dateianhänge in Ihrem alten Forensystem, aber auch wegen anderer Umstände, längere Zeit in Anspruch nehmen kann und brechen Sie den Import nicht voreilig ab.
+
+Hinweis: Nach erfolgreichem Import müssen Sie zwingend unter Administration -> Verwaltung -> Wartung die Anzeigen aktualisieren lassen.
+
+
+----------------------------------------------------------------
+
+V. Datenübernahme aus fremden Systemen (vBulletin, phpBB …)
+
+Die oben genannten Produkte unterstützen den Datenimport aus einer Vielzahl an fremden Systemen. Folgende Systeme werden derzeit unterstützt.
+
+	* IP.Board 3.4.x
+	* IP.Board 4.x
+	* Kunena 3.0.x
+	* MyBB 1.6.x
+	* MyBB 1.8.x
+	* NodeBB 0.6r (Redis, experimentell)
+	* phpBB 3.0.x
+	* phpBB 3.1.x
+	* Simple Machines Forum 2.x
+	* vBulletin 3.8.x - 4.2.x
+	* vBulletin 5.x (experimentell)
+	* WordPress 3.7+
+	* XenForo 1.2.x - 1.4.x
+	
+Hinweis: Wenn Sie WoltLab Suite über die selbe URL aufrufbar machen wollen wie ihr derzeitiges System, dann kopieren Sie bitte ihr altes System in ein Unterverzeichnis und installieren Sie die oben genannten Produkte direkt in das korrekte Verzeichnis.
+
+Für den Import von Dateianhängen, Avataren und Smileys ist es zwingend notwendig, dass beide Systeme sich auf dem selben Webspace Account befinden. Bei unterschiedlichen Subdomains verweigert je nach Serverkonfiguration die Sicherheitseinstellung open_basedir den Zugriff auf die andere Subdomain. Der Pfad muss zwingend der absolute Serverpfad sein. Eine Angabe einer URL ist nicht möglich.
+
+1. Installieren Sie WoltLab Suite und wählen Sie während der Installation als optionales Paket den Importer aus. Sollte WoltLab Suite bereits ohne Importer installiert sein, so können Sie das Paket über die Paketserver jeder Zeit nachinstallieren. Nach erfolgreicher Installation gehen Sie unter Administration -> Verwaltung -> Wartung auf Datenimport und wählen den Importer für ihr altes Forensystem aus.
+
+2. Folgen Sie den Anweisungen des Importers. Denken Sie bitte auch daran, dass der Import je nach Anzahl der Foren, Beiträge und Dateianhänge in Ihrem alten Forensystem, aber auch wegen anderer Umstände, längere Zeit in Anspruch nehmen kann und brechen Sie den Import nicht voreilig ab.
+
+Hinweis: Nach erfolgreichem Datenimport müssen Sie zwingend unter Administration -> Verwaltung -> Wartung die Anzeigen aktualisieren lassen.
+
+
+----------------------------------------------------------------
+
+Wir wünschen viel Freude mit Ihrem neuen System!
+Ihr WoltLab-Team!
+
+----------------------------------------------------------------
+Copyright (c) 2007 - 2016 by WoltLab® GmbH, alle Rechte vorbehalten. Version 1.5
+
+WoltLab® and Burning Board® are registered Community Trade Marks at The Office of Harmonization for the Internal Market (OHIM) in Alicante, Spain.

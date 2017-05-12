@@ -1,0 +1,116 @@
+Installation Guide Community Software WoltLab Suite™ 3
+
+Table of contents:
+
+	  I. System requirements
+	 II. Preparations & considerations
+	III. Installation procedure
+	 IV. Update from Burning Board® 4.0 or older Versions
+	  V. Data transfer from other systems
+
+
+----------------------------------------------------------------	 
+
+I. System requirements
+
+Requirements for installing WoltLab Suite™ 3:
+
+	* Web server with PHP 5.5.4 support or higher
+	* The following PHP extensions are required: mbstring, libxml, dom, zlib, pdo, pdo_mysql, json, pcre
+	* MySQL database at version 5.5.35 or better / alternatively MariaDB 10.0.22 or better, both with InnoDB support
+	* A minimum of 20 MB free hard disk space
+	* An FTP client, for transferring the installer files onto your web space
+
+Note: It's not possible to run the products mentioned above using PHP below version 5.5.4!
+
+
+----------------------------------------------------------------	 
+
+II. Preparations & considerations
+
+1. Unzip the zip file to your hard drive. You'll get these files:
+
+	* upload/test.php
+	* upload/install.php
+	* upload/WCFSetup.tar.gz
+	* License agreement.txt
+	* Lies mich.txt
+	* Lizenzbestimmungen.txt
+	* Read me.txt
+
+Note: The file "WCFSetup.tar.gz" is also an archive. Never unzip that archive! 
+
+2. Simply upload the three files from the "upload" subdirectory with your FTP program to a subdirectory of your choice on your web space. Consider uploading the files to the directory, where you want WoltLab Suite to be installed later. 
+
+3. To ensure your web space fullfils the system requirements, consider testing the PHP support first! All you need to do so is opening the file ("test.php") in your browser and see the results. E.g. "http://www.example.com/test.php" (replace "www.example.com" with the name of your server). If your server doesn't meet the system requirements, you may contact your web host to ask for some solution. For a dedicated server, please install the missing components.
+
+4. For further installation, please keep your MySQL access data ready. You can get this in the customer area of your web host.
+
+
+----------------------------------------------------------------
+
+III. Installation procedure
+
+Please note that the progress of the installation script can vary from time to time – do not cancel this process too soon. This behavior is completely normal. The duration of the installation depends on many factors such as your Internet bandwidth, the server speed and load as well as the chosen packages.
+
+1. If you have previously successfully tested with test.php the conditions, then you can now use "You can start the installation now." for proceeding. Alternatively, please start the installation by loading the installer file ("install.php") in your browser. E.g. "http://www.example.com/install.php" (replace "www.example.com" with the name of your own server). Follow the instructions in the installation assistant. Please keep your MySQL access data ready for installation.
+
+2. Please follow the instructions of the installation wizzard. The wizzard checks again if the web space meets the system requirements. If there is something that is not green, then please contact your web host provider if this function can still be changed. The installation can not continued until all requirements are met. At the next step, you will be asked for the installation directory for the CMS and your chosen product (app). By default, the main directory is suggested for the CMS. All other apps are installed in appropriate subfolders.
+
+
+----------------------------------------------------------------
+
+IV. Update from Burning Board® 4.0 or older Versions
+
+A direct update from Burning Board 4.0 and older is not possible. You must install WoltLab Suite in a separate directory and then import the data by the Burning Board Importer data from your old forum.
+
+Note: If you want to make WoltLab Suite available via the same URL as your current forum, please copy your old forum in a subdirectory and install WoltLab Suite directly to the correct directory.
+
+For the import of attachments, avatars and smileys it is absolutely necessary that both forums systems are on the same webspace account. At different subdomains denied, depending on the server configuration, the security setting open_basedir access to the other subdomain. Thus, the import of attachments, avatars and smileys is not possible.
+
+1. Install WoltLab Suite and select during installation the importer plug-in as an optional package. If WoltLab Suite is already be installed without the importer plug-in, you can install the package from the package server at any time. After successful installation, go to Administration -> Management -> Maintenance -> Data Import and select the importer for your old forums system.
+
+2. Just follow the instructions. Please keep in mind, that the duration of the import process depends on many factors, like quantity of forums, posts and attachments in your old forum system, but also many other factors. Do not abort the procedure too early!
+
+Notice: After you have finished the data import, you should update the counters under Administration -> Management -> Maintenance -> Update counters.
+
+
+----------------------------------------------------------------
+
+V. Data transfer from other systems
+
+The above mentioned products support data import from a variety of external systems. The following systems are supported.
+
+	* IP.Board 3.4.x
+	* IP.Board 4.x
+	* Kunena 3.0.x
+	* MyBB 1.6.x
+	* MyBB 1.8.x
+	* NodeBB 0.6r (Redis, experimentell)
+	* phpBB 3.0.x
+	* phpBB 3.1.x
+	* Simple Machines Forum 2.x
+	* vBulletin 3.8.x - 4.2.x
+	* vBulletin 5.x (experimentell)
+	* WordPress 3.7+
+	* XenForo 1.2.x - 1.4.x
+	
+Note: If you want to make the above mentioned products called via the same URL as your current system, please copy your old system in a subdirectory and install the above listed products directly to the correct directory.
+
+For the import of  attachments, avatars and smileys it is absolutely necessary that both systems are on the same webspace account. At different subdomains denied, depending on the server configuration, the security setting open_basedir access to the other subdomain. Thus, the import of attachments, avatars and smileys is not possible.
+
+1. Install WoltLab Suite and select during installation the importer plug-in as an optional package. If the above mentioned products already be installed without the importer plug-in, you can install the package from the package server at any time. After successful installation, go to Administration -> Managenent -> Maintenance -> Data Import and select the importer for your old system.
+
+2. Just follow the instructions. Please keep in mind, that the duration of the import process depends on many factors, like quantity of forums, posts and attachments in your old forum system, but also many other factors. Do not abort the procedure too early!
+
+Notice: After you have finished the data import, you should update the counters under Administration -> Management -> Maintenance -> Update counters.
+
+----------------------------------------------------------------
+
+Enjoy your new software!
+Your WoltLab-Team!
+
+----------------------------------------------------------------
+Copyright (c) 2007 - 2016 by WoltLab® GmbH, all rights reserved. Version 1.5
+
+WoltLab® and Burning Board® are registered Community Trade Marks at The Office of Harmonization for the Internal Market (OHIM) in Alicante, Spain.
