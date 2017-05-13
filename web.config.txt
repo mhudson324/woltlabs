@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <rewrite>
+            <rules>
+                    <rule name="WoltLab Suite Blog">
+                            <match url="^blog/(.*)$"  />
+                            <action type="Rewrite" url="blog/index.php?{R:1}" />
+                            <conditions>
+                            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+                            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+                            </conditions>
+                            </rule>
+                            <rule name="WoltLab Suite Calendar">
+                               <match url="^calendar/(.*)$"  />
+                               <action type="Rewrite" url="calendar/index.php?{R:1}" />
+                            <conditions>
+                            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+                            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+                            </conditions>
+                            </rule>
+                            <rule name="WoltLab Suite Gallery">
+                            <match url="^gallery/(.*)$"  />
+                            <action type="Rewrite" url="gallery/index.php?{R:1}" />
+                            <conditions>
+                            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+                               <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+                            </conditions>
+                            </rule>
+                            <rule name="WoltLab Suite Filebase">
+                            <match url="^filebase/(.*)$"  />
+                            <action type="Rewrite" url="filebase/index.php?{R:1}" />
+                            <conditions>
+                            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+                            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+                            </conditions>
+                            </rule>
+                            <rule name="WoltLab Suite Forum">
+                            <match url="^forum/(.*)$"  />
+                            <action type="Rewrite" url="forum/index.php?{R:1}" />
+                            <conditions>
+                            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+                            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+                            </conditions>
+                            </rule>
+                            <rule name="WoltLab Suite Core">
+                            <match url="^(cms|wcf)/(.*)$"  />
+                            <action type="Rewrite" url="{R:1}/index.php?{R:2}" />
+                            <conditions>
+                            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+                            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+                            </conditions>
+                            </rule>
+                            <rule name="User Friendly URLs">
+                            <match url="^(.*)" />
+                            <action type="Rewrite" url="index.php?{R:1}" />
+                            <conditions>
+                            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+                            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+                                </conditions>
+                            </rule>
+            </rules>
+        </rewrite>
+    </system.webServer>
+</configuration>
